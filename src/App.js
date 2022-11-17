@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  About,
+  Contact,
+  Footer,
+  HeroSection,
+  Navbar,
+  Portfolio,
+  Resume,
+  TechStack,
+} from "./components";
+import styled from "styled-components";
+import NavProvider from "./hooks/NavContext";
 
 function App() {
+  const handleScrollToContact = () => {
+    document
+      .getElementById("contactContainer")
+      .scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <NavProvider>
+        <Navbar />
+        <HeroSection />
+        <Portfolio />
+        <Resume />
+        <TechStack />
+        <About handleClick={handleScrollToContact} />
+        <Contact />
+        <Footer />
+      </NavProvider>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  min-height: 100vh;
+  width: 100%;
+`;
 
 export default App;
