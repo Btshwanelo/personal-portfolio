@@ -29,6 +29,9 @@ const About = ({ handleClick }) => {
             writing and testing codes, troubleshooting simple/complex issues,
             and implementing new features based on user feedback.
           </p>
+          <p>Frontend: HTML, CSS, JAVASCRIPT, React, Nextjs (SSR, SSG), Sass, React-Native(Expo), PWA </p>
+          <p>Backend: Node.js, MongoDB, REST API and Microservices</p>
+          <p>Tooling: -TDD Development Git, GitHub, Docker Webpack, CI/CD, ESLint, AWS CDK</p>
           <ButtonWrapper>
             <HireMeButton onClick={handleClick}>Hire Me</HireMeButton>
             <CVButton
@@ -66,7 +69,7 @@ const ImageWrapper = styled.div`
 
 const Image = styled.div`
   max-width: 100%;
-  min-height: 433px;
+  min-height: 610px;
   background-image: url("/images/image.jpeg");
   background-repeat: no-repeat;
   background-position: center;

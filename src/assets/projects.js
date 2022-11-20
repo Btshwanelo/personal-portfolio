@@ -17,7 +17,7 @@ export const projects = [
     category: "React Js",
     name: "personal portfolio",
     img: "/images/portfolio.jpg",
-    github: "",
+    github: "https://github.com/Btshwanelo/personal-portfolio",
     id: "3"
   },
   {
@@ -39,7 +39,7 @@ export const projects = [
     name: "weather pwa app",
     img: "/images/weather.png",
     github: "https://github.com/Btshwanelo/weather-app",
-    id: "5"
+    id: "6"
   },
 ];
 

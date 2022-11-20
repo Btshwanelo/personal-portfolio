@@ -44,7 +44,18 @@ const Portfolio = () => {
               </Link>
             ) : (
               <LinkActive onClick={() => handlePortfolio("PWA")}>
-                Full stack
+                PWA
+              </LinkActive>
+            )}
+          </ListItem>
+          <ListItem>
+            {activePortfolio != "Nextjs" ? (
+              <Link onClick={() => handlePortfolio("Nextjs")}>
+                Nextjs
+              </Link>
+            ) : (
+              <LinkActive onClick={() => handlePortfolio("Nextjs")}>
+                Nextjs
               </LinkActive>
             )}
           </ListItem>
