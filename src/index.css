@@ -1,3 +1,8 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -10,6 +15,16 @@ body {
   margin: 0;
   padding: 0;
   background: #222;
+}
+
+.bg-portfolio {
+  background-image: url('/public/images/about-img.jpg');
+  background-repeat: no-repeat;
+}
+
+.bg-hero {
+  background-image: url('/public//images/hero-background.svg');
+  background-size: cover
 }
 
 /**
@@ -86,4 +101,17 @@ body {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+
+.bounce-top {
+  animation: bounce-in-top 1.5s 1s both;
+}
+
+.slide-left {
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.scale-in-center {
+ animation :scale-in-center 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
 }

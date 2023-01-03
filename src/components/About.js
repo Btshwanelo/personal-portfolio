@@ -1,143 +1,54 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useNav } from '../hooks/useNav';
 
 const About = ({ handleClick }) => {
   const aboutRef = useNav('About');
 
   return (
-    <Container ref={aboutRef} id="aboutContainer">
-      <Wrapper>
-        <ImageWrapper>
-          <Image />
-        </ImageWrapper>
-        <ContentWrapper>
-          <h2>
-            About <strong>Me</strong>
-          </h2>
-          <LeadText>
-            Innovative, taks-driven proffesional with 5+ years of experience in
-            web development.
-          </LeadText>
-          <p>
-            Equipped with a record of success in consistently identifying and
-            providing the technological needs of companies through ingenious
-            innovation.
-          </p>
-          <p>
-            Proficient in developing databases, creating user interfacces,
-            writing and testing codes, troubleshooting simple/complex issues,
-            and implementing new features based on user feedback.
-          </p>
-          <p>Frontend: HTML, CSS, JAVASCRIPT, React, Nextjs (SSR, SSG), Sass, React-Native(Expo), PWA </p>
-          <p>Backend: Node.js, MongoDB, REST API and Microservices</p>
-          <p>Tooling: -TDD Development Git, GitHub, Docker Webpack, CI/CD, ESLint, AWS CDK</p>
-          <ButtonWrapper>
-            <HireMeButton onClick={handleClick}>Hire Me</HireMeButton>
-            <CVButton
-              href="/file/goodwill_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download CV
-            </CVButton>
-          </ButtonWrapper>
-        </ContentWrapper>
-      </Wrapper>
-    </Container>
+    <div
+      ref={aboutRef}
+      id='aboutContainer'
+      className='w-full flex justify-center py-10 sm:py-20'>
+      <div className='w-full max-w-6xl flex flex-col'>
+        <h2 className='text-white font-extralight pt-5 text-3xl text-center mb-10'>
+          About <strong className='font-extrabold'> Me</strong>
+        </h2>
+        <div className='grid grid-cols-1 m-4 sm:m-8 md:grid-cols-2 gap-6'>
+          <div className='bg-portfolio w-full h-80 bg-cover bg-center'></div>
+          <div>
+            <div className='grid h-80'>
+              <p className='font-extralight text-gray-400 text-base text-center	mt-1 mb-4 '>
+                {' '}
+                I am an innovative, taks-driven proffesional with 5+ years of experience in web development.
+              </p>
+              <p className='font-light text-gray-400 text-center mb-4'>
+                Equipped with a record of success in consistently identifying and providing the technological needs of companies through
+                ingenious innovation.
+              </p>
+              <p className='font-light text-gray-400 text-center m-4'>
+                Proficient in developing databases, creating user interfacces, writing and testing codes, troubleshooting simple/complex
+                issues, and implementing new features based on user feedback.
+              </p>
+              <div className='flex justify-center mt-8'>
+                <button
+                  className='py-4 px-6 tracking-wide text-xs uppercase text-white cursor-pointer border rounded-lg bg-[#bac964] border-[#bac964] '
+                  onClick={handleClick}>
+                  Hire Me
+                </button>
+                <a
+                  className='py-4 px-6 tracking-wide text-xs uppercase text-white cursor-pointer border rounded-lg bg-[#6c757d] border-[#6c757d] ml-5 '
+                  href='/file/goodwill_resume.pdf'
+                  target='_blank'
+                  rel='noopener noreferrer'>
+                  Download CV
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
-
-const Container = styled.section`
-  width: 100%;
-  padding: 5rem 0;
-  display: flex;
-  justify-content: center;
-`;
-
-const Wrapper = styled.div`
-  width: 100%;
-  max-width: 1140px;
-  display: flex;
-  flex-direction: row;
-`;
-
-const ImageWrapper = styled.div`
-  width: 60%;
-  padding-right: 3rem;
-`;
-
-const Image = styled.div`
-  max-width: 100%;
-  min-height: 610px;
-  background-image: url("/images/image.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
-  text-align: center;
-`;
-const ContentWrapper = styled.div`
-  width: 40%;
-  padding-left: 3rem;
-
-  & h2 {
-    color: #fff;
-    font-weight: 200;
-    padding-top: 0px;
-    font-size: 30px;
-    margin-top: 10px;
-  }
-
-  & p {
-    color: rgba(255, 255, 255, 0.4);
-    font-weight: 300;
-  }
-`;
-
-const LeadText = styled.p`
-  font-weight: 200;
-  line-height: 1.5;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  text-align: text;
-`;
-
-const ButtonWrapper = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-`;
-
-const HireMeButton = styled.button`
-  cursor: pointer;
-  color: #fff;
-  background-color: #bac964;
-  border-color: #bac964;
-  border-style: solid;
-  border-radius: 8px;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.2rem;
-  padding: 1rem 1.5rem;
-  margin-left: 5px;
-`;
-
-const CVButton = styled.a`
-  background-color: #6c757d;
-  border-color: #6c757d;
-  cursor: pointer;
-  color: #fff;
-  border-style: solid;
-  border-radius: 8px;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.2rem;
-  padding: 0.85rem 1.5rem;
-  margin-left: 5px;
-  text-decoration: none;
-`;
 
 export default About;

@@ -1,24 +1,12 @@
-import {
-  About,
-  Contact,
-  Footer,
-  HeroSection,
-  Navbar,
-  Portfolio,
-  Resume,
-  TechStack,
-} from "./components";
-import styled from "styled-components";
-import NavProvider from "./hooks/NavContext";
+import NavProvider from './hooks/NavContext';
+import { About, Contact, Footer, HeroSection, Navbar, Portfolio, Resume, TechStack } from './components';
 
 function App() {
   const handleScrollToContact = () => {
-    document
-      .getElementById("contactContainer")
-      .scrollIntoView({ behavior: "smooth" });
+    document.getElementById('contactContainer').scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <Container>
+    <div className='min-h-[100vh] w-full'>
       <NavProvider>
         <Navbar />
         <HeroSection />
@@ -29,13 +17,8 @@ function App() {
         <Contact />
         <Footer />
       </NavProvider>
-    </Container>
+    </div>
   );
 }
-
-const Container = styled.div`
-  min-height: 100vh;
-  width: 100%;
-`;
 
 export default App;

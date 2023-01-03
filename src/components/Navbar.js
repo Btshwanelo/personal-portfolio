@@ -1,37 +1,55 @@
-import React from "react";
-import styled from "styled-components";
-import { navLinks } from "../assets/navLinks";
-import NavLink from "./NavLink";
+import React, { useState } from 'react';
+import { navLinks } from '../assets/navLinks';
+import NavLink from './NavLink';
 
-const Navbar = (props) => {
+const Navbar = () => {
+  const [isMobile, setIsMobile] = useState(false);
   return (
-    <Container>
-      <List>
+    <div className={`flex flex-col sm:flex-row sm:justify-center py-2  bg-white fixed top-0 w-full z-20`}>
+      <div
+        className='px-5 sm:hidden'
+        onClick={() => setIsMobile(!isMobile)}>
+        {isMobile ? (
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            strokeWidth={1.5}
+            stroke='currentColor'
+            className='w-6 h-6'>
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='M6 18L18 6M6 6l12 12'
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            strokeWidth={1.5}
+            stroke='currentColor'
+            className='w-6 h-6'>
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+            />
+          </svg>
+        )}
+      </div>
+      <ul className={`list-none sm:flex m-0 p-0 ${!isMobile && 'hidden'}`}>
         {navLinks.map((nav) => (
-          <NavLink key={nav.id} navLinkId={nav.navLinkId} scrollToId={nav.scrollToId} />
+          <NavLink
+            key={nav.id}
+            navLinkId={nav.navLinkId}
+            scrollToId={nav.scrollToId}
+          />
         ))}
-      </List>
-    </Container>
+      </ul>
+    </div>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0.5rem 0;
-  background: #fff;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-`;
-
-const List = styled.ul`
-  list-style: none;
-  display: flex;
-  padding-inline-start: 0px;
-  margin: 0;
-`;
 
 export default Navbar;

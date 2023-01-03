@@ -13,42 +13,32 @@ const Contact = () => {
   const [isError, setIsError] = useState(false);
 
   const sendEmail = (values, resetForm) => {
-    emailjs
-      .send('service_u5bt7qn', 'template_t7k01ka', values, 'etIeGgOXh5QqIIJ66')
-      .then(
-        () => {
-          setIsSubmitted(true);
-          setTimeout(() => {
-            setIsSubmitted(false);
-          }, 100);
+    emailjs.send('service_u5bt7qn', 'template_t7k01ka', values, 'etIeGgOXh5QqIIJ66').then(
+      () => {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 100);
 
-          resetForm();
-        },
-        () => {
-          setIsError(true);
+        resetForm();
+      },
+      () => {
+        setIsError(true);
 
-          setTimeout(() => {
-            setIsError(false);
-          }, 100);
-        },
-      );
+        setTimeout(() => {
+          setIsError(false);
+        }, 100);
+      },
+    );
   };
 
   const formik = useFormik({
     initialValues: { name: '', email: '', phone: '', message: '' },
     validationSchema: Yup.object({
-      name: Yup.string()
-        .max(18, 'Must be 15 characters or less')
-        .required('Name is Required'),
-      email: Yup.string()
-        .email('Invalid email address')
-        .required('Email is Required'),
-      phone: Yup.string()
-        .min(10, 'Minimum of 10 numbers is required')
-        .required('Phone number is Required'),
-      message: Yup.string()
-        .min(10, 'Minimum of 10 charecters is required')
-        .required('Message is Required'),
+      name: Yup.string().max(18, 'Must be 15 characters or less').required('Name is Required'),
+      email: Yup.string().email('Invalid email address').required('Email is Required'),
+      phone: Yup.string().min(10, 'Minimum of 10 numbers is required').required('Phone number is Required'),
+      message: Yup.string().min(10, 'Minimum of 10 charecters is required').required('Message is Required'),
     }),
     onSubmit: (values, { resetForm }) => {
       sendEmail(values, resetForm);
@@ -57,95 +47,101 @@ const Contact = () => {
   });
 
   return (
-    <Container ref={contactRef} id="contactContainer">
-      <Heading>
-        Get <strong>In Touch</strong>
-      </Heading>
-      <Content>
-        <ContactForm>
-          <Title>Get In Touch</Title>
-          <form ref={form} onSubmit={formik.handleSubmit}>
-            <FormGroup>
-              {formik.errors.name && formik.touched.name && (
-                <span>{formik.errors.name}</span>
-              )}
+    <section
+      className='w-full max-w-6xl flex flex-col justify-center mt-8 mx-auto py-10 sm:py-20'
+      ref={contactRef}
+      id='contactContainer'>
+      <h2 className='text-white font-extralight pt-5 text-3xl text-center mb-2'>
+        Get <strong className='font-extrabold'>In Touch</strong>
+      </h2>
+      <div className='w-full flex flex-col md:flex-row'>
+        <div className='md:w-3/5 p-4'>
+          <h3 className='text-white font-extralight text-2xl mb-2 sm:mb-16'>Get In Touch</h3>
+          <form
+            ref={form}
+            onSubmit={formik.handleSubmit}>
+            <div className='mb-4 box-border w-full'>
+              {formik.errors.name && formik.touched.name && <span className='text-red-500'>{formik.errors.name}</span>}
               <input
-                placeholder="Your name"
-                type="text"
-                id="name"
+                className='border-none bg-[#333] w-full text-white py-6 px-4 block h-[2.375rem] text-base border border-r-[0.25rem] overflow-hidden'
+                placeholder='Your name'
+                type='text'
+                id='name'
                 error={formik.errors.name}
                 onChange={formik.handleChange}
                 fieldprops={formik.getFieldProps('name')}
                 value={formik.values.name}
               />
-            </FormGroup>
+            </div>
 
-            <FormGroup>
-              {formik.errors.email && formik.touched.email && (
-                <span>{formik.errors.email}</span>
-              )}
+            <div className='mb-4 box-border w-full'>
+              {formik.errors.email && formik.touched.email && <span className='text-red-500'>{formik.errors.email}</span>}
               <input
-                placeholder="Email"
-                type="email"
-                id="email"
+                className='border-none bg-[#333] w-full text-white py-6 px-4 block h-[2.375rem] text-base border border-r-[0.25rem] overflow-hidden'
+                placeholder='Email'
+                type='email'
+                id='email'
                 error={formik.errors.email}
                 onChange={formik.handleChange}
                 fieldprops={formik.getFieldProps('email')}
                 value={formik.values.email}
               />
-            </FormGroup>
-            <FormGroup>
-              {formik.errors.phone && formik.touched.phone && (
-                <span>{formik.errors.phone}</span>
-              )}
+            </div>
+            <div className='mb-4 box-border w-full'>
+              {formik.errors.phone && formik.touched.phone && <span className='text-red-500'>{formik.errors.phone}</span>}
               <input
-                placeholder="Phone"
-                type="text"
-                id="phone"
+                className='border-none bg-[#333] w-full text-white py-6 px-4 block h-[2.375rem] text-base border border-r-[0.25rem] overflow-hidden'
+                placeholder='Phone'
+                type='text'
+                id='phone'
                 error={formik.errors.phone}
                 onChange={formik.handleChange}
                 fieldprops={formik.getFieldProps('phone')}
                 value={formik.values.phone}
               />
-            </FormGroup>
-            <FormGroup>
-              {formik.errors.message && formik.touched.message && (
-                <span>{formik.errors.message}</span>
-              )}
+            </div>
+            <div className='mb-4 box-border w-full'>
+              {formik.errors.message && formik.touched.message && <span className='text-red-500'>{formik.errors.message}</span>}
               <textarea
-                placeholder="Write a Message"
-                type="text"
-                id="message"
+                className='border-none bg-[#333] w-full text-white py-6 px-4 block text-base border-r-[0.25rem] overflow-visible h-auto min-h-[250px] '
+                placeholder='Write a Message'
+                type='text'
+                id='message'
                 error={formik.errors.message}
                 onChange={formik.handleChange}
                 fieldprops={formik.getFieldProps('message')}
                 value={formik.values.message}
               />
-            </FormGroup>
-            <FormGroup>
-              {isSubmitted && <p>Successfully submitted, you will hear from me soon.</p>}
+            </div>
+            <div className='mb-4 box-border w-full'>
+              {isSubmitted && <p className='text-[#bac964]'>Successfully submitted, you will hear from me soon.</p>}
               {isError ? (
-                <span>Something went wrong</span>
+                <span className='text-red-500'>Something went wrong</span>
               ) : (
-                <SubmitButton type="submit">SEND MESSAGE</SubmitButton>
+                <button
+                  className='py-4 px-6 tracking-wide text-xs uppercase text-white cursor-pointer border rounded-lg bg-[#bac964] border-[#bac964] '
+                  type='submit'>
+                  SEND MESSAGE
+                </button>
               )}
-            </FormGroup>
+            </div>
           </form>
-        </ContactForm>
-        <ContactInfo>
-          <Title>My Contact Details</Title>
-          <List>
-            <ListItem>
-              <span>Email</span> bucibot@gmail.com
-            </ListItem>
-            <ListItem>
-              <span>Address</span>Terenure AH, <br /> Kempton Park, <br />
-              1619 <br />
-            </ListItem>
-          </List>
-        </ContactInfo>
-      </Content>
-    </Container>
+        </div>
+        <div className='md:w-2/5 p-4 md:pl-12 md:py-4'>
+          <h3 className='text-white font-extralight text-2xl mb-2 sm:mb-16'>My Contact Details</h3>
+          <ul className='text-left p-0 m-0'>
+            <li className='list-none mb-5 font-light text-base text-white'>
+              <span className='text-[#2c3e50] block uppercase mb-1 font-medium text-xs'>Email</span> bucibot@gmail.com
+            </li>
+            <li className='list-none mb-5 font-light text-base text-white'>
+              <span className='text-[#2c3e50] block uppercase mb-1 font-medium text-xs'>Address</span> South Africa <br /> Gauteng <br />{' '}
+              Johannesburg <br />
+              1804 <br />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 };
 

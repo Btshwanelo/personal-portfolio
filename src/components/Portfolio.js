@@ -1,221 +1,180 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { useNav } from "../hooks/useNav";
-import { projects } from "../assets/projects";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useNav } from '../hooks/useNav';
+import { projects } from '../assets/projects';
 
 const Portfolio = () => {
-  const [activePortfolio, setActivePortfolio] = useState("All");
+  const [activePortfolio, setActivePortfolio] = useState('All');
 
-  const portfolioRef = useNav("Portfolio");
+  const portfolioRef = useNav('Portfolio');
 
   const handlePortfolio = (portfolio) => {
     setActivePortfolio(portfolio);
   };
 
   return (
-    <Container ref={portfolioRef} id="portfolioContainer">
-      <Heading>
-        Featured <strong>Portfolio</strong>
-      </Heading>
-      <Filters>
-        <List>
-          <ListItem>
-            {activePortfolio != "All" ? (
-              <Link onClick={() => handlePortfolio("All")}>All</Link>
-            ) : (
-              <LinkActive onClick={() => handlePortfolio("All")}>
+    <div
+      className='max-w-6xl mx-auto py-10 sm:py-20'
+      ref={portfolioRef}
+      id='portfolioContainer'>
+      <div className='text-white font-extralight pt-5 text-3xl text-center mb-8'>
+        Featured <strong className='font-extrabold'>Portfolio</strong>
+      </div>
+      <div className='flex justify-center'>
+        <ul className='list-none flex p-0 mb-8'>
+          <li className='text-gray-300 py-4 px-5'>
+            {activePortfolio != 'All' ? (
+              <a
+                className='font-normal	 text-sm text-gray-400 hover:text-[#bac964] tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('All')}>
                 All
-              </LinkActive>
-            )}
-          </ListItem>
-          <ListItem>
-            {activePortfolio != "React Js" ? (
-              <Link onClick={() => handlePortfolio("React Js")}>React Js</Link>
+              </a>
             ) : (
-              <LinkActive onClick={() => handlePortfolio("React Js")}>
+              <a
+                className='font-normal	 text-sm text-[#bac964] hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('All')}>
+                All
+              </a>
+            )}
+          </li>
+          <li className='text-gray-300 py-4 px-5'>
+            {activePortfolio != 'React Js' ? (
+              <a
+                className='font-normal	 text-sm text-gray-400 hover:text-[#bac964] tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('React Js')}>
                 React Js
-              </LinkActive>
-            )}
-          </ListItem>
-          <ListItem>
-            {activePortfolio != "PWA" ? (
-              <Link onClick={() => handlePortfolio("PWA")}>
-                PWA
-              </Link>
+              </a>
             ) : (
-              <LinkActive onClick={() => handlePortfolio("PWA")}>
+              <a
+                className='font-normal	 text-sm text-[#bac964] hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('React Js')}>
+                React Js
+              </a>
+            )}
+          </li>
+          <li className='text-gray-300 py-4 px-5'>
+            {activePortfolio != 'PWA' ? (
+              <a
+                className='font-normal	 text-sm text-gray-400 hover:text-[#bac964] tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('PWA')}>
                 PWA
-              </LinkActive>
-            )}
-          </ListItem>
-          <ListItem>
-            {activePortfolio != "Nextjs" ? (
-              <Link onClick={() => handlePortfolio("Nextjs")}>
-                Nextjs
-              </Link>
+              </a>
             ) : (
-              <LinkActive onClick={() => handlePortfolio("Nextjs")}>
-                Nextjs
-              </LinkActive>
+              <a
+                className='font-normal	 text-sm text-[#bac964] hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('PWA')}>
+                PWA
+              </a>
             )}
-          </ListItem>
-        </List>
-      </Filters>
-      <Content>
-        <Wrapper>
-          {activePortfolio === "All" &&
+          </li>
+          <li className='text-gray-300 py-4 px-5'>
+            {activePortfolio != 'Nextjs' ? (
+              <a
+                className='font-normal	 text-sm text-gray-400 hover:text-[#bac964] tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('Nextjs')}>
+                Nextjs
+              </a>
+            ) : (
+              <a
+                className='font-normal	 text-sm text-[#bac964] hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('Nextjs')}>
+                Nextjs
+              </a>
+            )}
+          </li>
+          <li className='text-gray-300 py-4 px-5'>
+            {activePortfolio != 'React Native' ? (
+              <a
+                className='font-normal	 text-sm text-gray-400 hover:text-[#bac964] tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('React Native')}>
+                React Native
+              </a>
+            ) : (
+              <a
+                className='font-normal	 text-sm text-[#bac964] hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('React Native')}>
+                React Native
+              </a>
+            )}
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div className='grid grid-cols-1 m-4 sm:m-8 sm:grid-cols-3 sm:gap-10'>
+          {activePortfolio === 'All' &&
             projects.map((project) => (
-              <Card key={project.id}>
-                <CardImage>
-                  <img src={project.img} width="100%" height="100%" />
-                </CardImage>
-                <CardDetails>
-                  <h4>{project.name}</h4>
-                  <p>{project.category}</p>
+              <div
+                className='scale-in-center mb-6 sm:mb-0'
+                key={project.id}>
+                <div className=''>
+                  <img
+                    src={project.img}
+                    width='100%'
+                    height='100%'
+                  />
+                </div>
+                <div className='flex flex-col text-center'>
+                  <h4 className='text-xl text-gray-400 font-extralight uppercase my-4'>{project.name}</h4>
+                  <p className='text-xs uppercase text-[#ccc] mb-2 font-light tracking-wide'>{project.category}</p>
                   {project.github && (
-                    <GithubLink href={project.github} target="_blank">
+                    <a
+                      className='font-normal	 text-sm text-[#bac964] mb-2 hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                      href={project.github}
+                      target='_blank'>
                       View on Github
-                    </GithubLink>
+                    </a>
                   )}
                   {project.live && (
-                    <LiveLink href={project.live} target="_blank">
+                    <a
+                      className='font-normal	 text-sm text-[#bac964] hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                      href={project.live}
+                      target='_blank'>
                       View Live
-                    </LiveLink>
+                    </a>
                   )}
-                </CardDetails>
-              </Card>
+                </div>
+              </div>
             ))}
           {projects.map(
             (project) =>
               project.category === activePortfolio && (
-                <Card key={project.id}>
-                  <CardImage>
-                    <img src={project.img} width="100%" height="100%" />
-                  </CardImage>
-                  <CardDetails>
-                    <h4>{project.name}</h4>
-                    <p>{project.category}</p>
+                <div
+                  className='scale-in-center mb-6'
+                  key={project.id}>
+                  <div className=''>
+                    <img
+                      src={project.img}
+                      width='100%'
+                      height='100%'
+                    />
+                  </div>
+                  <div className='flex flex-col text-center'>
+                    <h4 className='text-xl text-gray-400 font-extralight uppercase my-4'>{project.name}</h4>
+                    <p className='text-xs uppercase text-[#ccc] font-light mb-2 tracking-wide'>{project.category}</p>
                     {project.github && (
-                      <GithubLink href={project.github} target="_blank">
+                      <a
+                        className='font-normal	 text-sm text-[#bac964] mb-2 hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                        href={project.github}
+                        target='_blank'>
                         View on Github
-                      </GithubLink>
+                      </a>
                     )}
                     {project.live && (
-                      <LiveLink href={project.live} target="_blank">
+                      <a
+                        className='font-normal	 text-sm text-[#bac964] hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                        href={project.live}
+                        target='_blank'>
                         View Live
-                      </LiveLink>
+                      </a>
                     )}
-                  </CardDetails>
-                </Card>
-              )
+                  </div>
+                </div>
+              ),
           )}
-        </Wrapper>
-      </Content>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 
-const Container = styled.section`
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 5rem 0;
-`;
-
-const Heading = styled.div`
-  color: #fff;
-  font-weight: 200;
-  padding-top: 20px;
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 30px;
-
-  & strong {
-    font-weight: 800;
-  }
-`;
-
-const Filters = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const List = styled.ul`
-  list-style: none;
-  display: flex;
-  padding-inline-start: 0px;
-  padding: 0;
-  margin: 0 0 30px 0;
-`;
-
-const ListItem = styled.li`
-  color: #fff;
-  padding: 15px 20px;
-`;
-
-const Link = styled.a`
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.2rem;
-  color: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  text-decoration: none;
-
-  &:hover {
-    color: #bac964;
-  }
-`;
-
-const LinkActive = styled(Link)`
-  color: #bac964;
-`;
-
-const Content = styled.div``;
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  grid-template-areas: ". . .";
-`;
-
-const Card = styled.div`
-  animation: scale-in-center 0.5s cubic-bezier(0.19, 1, 0.22, 1) both;
-`;
-
-const CardImage = styled.div``;
-
-const CardDetails = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  & h4 {
-    font-size: 20px;
-    color: #fff;
-    font-weight: 200;
-    margin: 5px;
-    text-transform: capitalize;
-  }
-
-  & p {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #cccccc;
-    text-decoration: uppercase;
-    line-height: 1.7;
-    font-weight: 300;
-    letter-spacing: 3px;
-  }
-`;
-
-const GithubLink = styled(Link)`
-  color: #bac964;
-  text-transform: capitalize;
-  margin: 5px;
-  &:hover {
-    color: rgba(255, 255, 255, 0.4);
-  }
-`;
-
-const LiveLink = styled(GithubLink)``;
 export default Portfolio;
