@@ -21,7 +21,7 @@ const NavLink = ({ navLinkId, scrollToId }) => {
   ) : (
     <li className='py-4 px-5'>
       <a
-        className='cursor-pointer text-sm font-normal uppercase text-[#bac964] hover:text-[ #bac964]'
+        className='cursor-pointer text-sm font-normal uppercase text-orange-500 hover:text-[ #bac964]'
         id={navLinkId}
         onClick={handleClick}>
         {navLinkId}

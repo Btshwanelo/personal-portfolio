@@ -23,8 +23,9 @@ body {
 }
 
 .bg-hero {
-  background-image: url('/public//images/hero-background.svg');
-  background-size: cover
+  background: rgb(184,46,31);
+background: linear-gradient(90deg, rgba(184,46,31,1) 46%, rgba(0,0,0,1) 100%);
+  
 }
 
 /**

@@ -114,12 +114,12 @@ const Contact = () => {
               />
             </div>
             <div className='mb-4 box-border w-full'>
-              {isSubmitted && <p className='text-[#bac964]'>Successfully submitted, you will hear from me soon.</p>}
+              {isSubmitted && <p className='text-orange-500'>Successfully submitted, you will hear from me soon.</p>}
               {isError ? (
                 <span className='text-red-500'>Something went wrong</span>
               ) : (
                 <button
-                  className='py-4 px-6 tracking-wide text-xs uppercase text-white cursor-pointer border rounded-lg bg-[#bac964] border-[#bac964] '
+                  className='py-4 px-6 tracking-wide text-xs uppercase text-white cursor-pointer border rounded-lg bg-orange-500 border-orange-500 '
                   type='submit'>
                   SEND MESSAGE
                 </button>

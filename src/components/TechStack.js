@@ -9,7 +9,7 @@ const TechStack = (props) => {
       </h2>
       <div className='grid grid-cols-1 m-4 sm:m-8 sm:grid-cols-3 gap-10'>
         <div className='pt-10 pb-7 bg-gray-300 text-black font-light mb-6 border-0 border-transparent	 rounded-lg	'>
-          <h2 className='font-bold mb-2 border-b p-4 text-center text-white text-2xl bg-red-500'>Frontend</h2>
+          <h2 className='font-bold mb-2 border-b p-4 text-center text-white text-2xl bg-orange-500'>Frontend</h2>
           <p className='mb-2 text-base text-neutral-900 font-normal  p-1 text-center'>HTML, CSS & JavaScript</p>
           <p className='mb-2 text-base text-neutral-900 font-normal  p-1 text-center'>Typescript  </p>
           <p className='mb-2 text-base text-neutral-900 font-normal  p-1 text-center'>React</p>
@@ -26,7 +26,7 @@ const TechStack = (props) => {
           <p className='mb-2 text-base text-neutral-900 font-normal  p-1 text-center'> MySQL </p>
         </div>
          <div className='pt-10 pb-7 bg-gray-300 text-black font-light mb-6 border-0 border-transparent	 rounded-lg	'>
-          <h2 className='font-bold mb-2 border-b p-4 text-center text-white text-2xl bg-green-500'>Tools</h2>
+          <h2 className='font-bold mb-2 border-b p-4 text-center text-white text-2xl bg-orange-500'>Tools</h2>
           <p className='mb-2 text-base text-neutral-900 font-normal  p-1 text-center'>Github & Git</p>
           <p className='mb-2 text-base text-neutral-900 font-normal  p-1 text-center'>Jest, React Testing Library & Cypres </p>
           <p className='mb-2 text-base text-neutral-900 font-normal  p-1 text-center'>Payment Gateway [Paypal, Stripe, Google] </p>

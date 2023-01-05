@@ -31,7 +31,7 @@ const About = ({ handleClick }) => {
               </p>
               <div className='flex justify-center mt-8'>
                 <button
-                  className='py-4 px-6 tracking-wide text-xs uppercase text-white cursor-pointer border rounded-lg bg-[#bac964] border-[#bac964] '
+                  className='py-4 px-6 tracking-wide text-xs uppercase text-white cursor-pointer border rounded-lg bg-orange-500 border-orange-500 '
                   onClick={handleClick}>
                   Hire Me
                 </button>
