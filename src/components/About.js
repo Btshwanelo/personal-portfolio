@@ -37,7 +37,7 @@ const About = ({ handleClick }) => {
                 </button>
                 <a
                   className='py-4 px-6 tracking-wide text-xs uppercase text-white cursor-pointer border rounded-lg bg-[#6c757d] border-[#6c757d] ml-5 '
-                  href='/file/goodwill_resume.pdf'
+                  href='/file/Tshwanelo-Resume.pdf'
                   target='_blank'
                   rel='noopener noreferrer'>
                   Download CV
