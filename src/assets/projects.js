@@ -2,7 +2,7 @@ export const projects = [
   {
     category: 'React Js',
     name: 'Starwars Api App',
-    img: '/images/star-wars.png',
+    img: '/images/star-wars.jpg',
     github: 'https://github.com/Btshwanelo/starwars_api',
     id: '1',
   },
