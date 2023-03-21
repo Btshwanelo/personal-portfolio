@@ -18,13 +18,6 @@ const Footer = () => {
         </a>
         <a
           className='flex justify-center align-middle p-4 bg-[#333] relative rounded-full text-xl mx-3 cursor-pointer'
-          href='https://twitter.com/BTshwanelo'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <TwitterIcon />
-        </a>
-        <a
-          className='flex justify-center align-middle p-4 bg-[#333] relative rounded-full text-xl mx-3 cursor-pointer'
           href='https://github.com/Btshwanelo/'
           target='_blank'
           rel='noopener noreferrer'>

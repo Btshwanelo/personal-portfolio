@@ -97,6 +97,21 @@ const Portfolio = () => {
               </a>
             )}
           </li>
+          <li className='text-gray-300 py-4 px-5'>
+            {activePortfolio != 'Typescript' ? (
+              <a
+                className='font-normal	 text-sm text-gray-400 hover:text-[#bac964] tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('Typescript')}>
+                Typescript
+              </a>
+            ) : (
+              <a
+                className='font-normal	 text-sm text-[#bac964] hover:text-gray-400 tracking-wide cursor-pointer decoration-solid '
+                onClick={() => handlePortfolio('Typescript')}>
+                Typescript
+              </a>
+            )}
+          </li>
         </ul>
       </div>
       <div>

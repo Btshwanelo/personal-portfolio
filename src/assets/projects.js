@@ -16,15 +16,15 @@ export const projects = [
   {
     category: 'React Js',
     name: 'Personal Portfolio',
-    img: '/images/portfolio.jpg',
+    img: '/images/resume.jpg',
     github: 'https://github.com/Btshwanelo/personal-portfolio',
     live: 'https://tshwanelo-portfolio.netlify.app',
     id: '3',
   },
   {
     category: 'React Js',
-    name: 'Music App Clone',
-    img: '/images/music-app.jpg',
+    name: 'Music App',
+    img: '/images/music.jpg',
     github: 'https://github.com/Btshwanelo/music-app',
     live: 'https://music-cloned-app.netlify.app',
     id: '4',
@@ -46,9 +46,17 @@ export const projects = [
   {
     category: 'Nextjs',
     name: 'Blog App ',
-    img: '/images/weather.png',
+    img: '/images/blog.jpg',
     github: 'https://github.com/Btshwanelo/medium-clone',
     live: 'https://medium-clone-nfyc.vercel.app/',
     id: '7',
+  },
+  {
+    category: 'Typescript',
+    name: 'Finance Logger App ',
+    img: '/images/logger.jpg',
+    github: 'https://github.com/Btshwanelo/finance-logger',
+    live: 'https://ts-finance-logger.netlify.app/',
+    id: '8',
   },
 ];
