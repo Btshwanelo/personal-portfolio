@@ -58,11 +58,11 @@
   }
 }
 
-.app__footer-cards .app__footer-card:last-child {
+.app__footer-cards .app__footer-card:nth-child(2) {
   background-color: #f2f7fb;
 }
 
-.app__footer-cards .app__footer-card:last-child:hover {
+.app__footer-cards .app__footer-card:nth-child(2):hover {
   box-shadow: 0 0 25px #f2f7fb;
 }
 

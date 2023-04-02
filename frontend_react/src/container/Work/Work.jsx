@@ -11,7 +11,6 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-
   useEffect(() => {
     const query = '*[_type == "works"]';
 
@@ -38,10 +37,10 @@ const Work = () => {
 
   return (
     <>
-      <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
+      <h2 className="head-text">My <span>Portfolio</span></h2>
 
       <div className="app__work-filter">
-        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+        {['React JS', 'React Native', 'Next JS', 'Angular JS', 'Fullstack', 'Phython', 'All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -69,8 +68,8 @@ const Work = () => {
                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 className="app__work-hover app__flex"
               >
+                {work.projectLink && (
                 <a href={work.projectLink} target="_blank" rel="noreferrer">
-
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.90] }}
@@ -80,6 +79,8 @@ const Work = () => {
                     <AiFillEye />
                   </motion.div>
                 </a>
+                )}
+                {work.codeLink && (
                 <a href={work.codeLink} target="_blank" rel="noreferrer">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
@@ -90,6 +91,7 @@ const Work = () => {
                     <AiFillGithub />
                   </motion.div>
                 </a>
+                )}
               </motion.div>
             </div>
 

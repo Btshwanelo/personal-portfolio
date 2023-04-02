@@ -15,7 +15,12 @@ const Skills = () => {
     const skillsQuery = '*[_type == "skills"]';
 
     sanityClient.fetch(query).then((data) => {
-      setExperiences(data);
+      const sortedData = data.sort((p1, p2) => {
+        if (p1.works[0].desc < p2.works[0].desc) return 1;
+        if (p1.works[0].desc > p2.works[0].desc) return -1;
+        return 0;
+      });
+      setExperiences(sortedData);
     });
 
     sanityClient.fetch(skillsQuery).then((data) => {
