@@ -8,9 +8,6 @@ import { sanityClient } from '../../client';
 const About = () => {
   const [abouts, setAbouts] = useState([]);
 
-  console.log('====================================');
-  console.log(abouts);
-  console.log('====================================');
   useEffect(() => {
     const query = '*[_type == "abouts"]';
 
