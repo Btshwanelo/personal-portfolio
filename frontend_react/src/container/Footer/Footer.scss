@@ -27,7 +27,7 @@
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
-    background-color: #fef4f5;
+    background-color: #d1f5dc;
 
     transition: all 0.3s ease-in-out;
 
@@ -45,7 +45,7 @@
       font-weight: 500;
     }
     &:hover {
-      box-shadow: 0 0 25px #fef4f5;
+      box-shadow: 0 0 25px #87be98;
     }
 
     @media screen and (max-width: 450px) {
@@ -64,6 +64,14 @@
 
 .app__footer-cards .app__footer-card:nth-child(2):hover {
   box-shadow: 0 0 25px #f2f7fb;
+}
+
+.app__footer-cards .app__footer-card:nth-child(3) {
+  background-color: #cce4f7;
+}
+
+.app__footer-cards .app__footer-card:nth-child(3):hover {
+  box-shadow: 0 0 25px #cce4f7;
 }
 
 .app__footer-form {
@@ -107,7 +115,7 @@
     padding: 1rem 2rem;
     border-radius: 10px;
     border: none;
-    background-color: var(--secondary-color);
+    background-color: #F7AB0A;
 
     font-weight: 500;
     color: var(--white-color);
@@ -119,7 +127,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #2430af;
+      background-color: #ebc678;
     }
   }
 

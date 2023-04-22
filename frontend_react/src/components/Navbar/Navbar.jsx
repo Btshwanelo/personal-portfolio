@@ -3,16 +3,16 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 import './Navbar.scss';
-// import { images } from '../../constants';
+import { images } from '../../constants';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav className="app__navbar">
-      {/* <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
-      </div> */}
+      <div className="app__navbar-logo">
+        <img src={images.avatarlogo} alt="logo" />
+      </div>
       <ul className="app__navbar-links">
         {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>

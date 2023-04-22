@@ -19,6 +19,8 @@ import typescript from '../assets/typescript.png';
 import vue from '../assets/vue.png';
 import comingsoon from '../assets/comingsoon.png';
 import curriculum from '../assets/curriculum.png';
+import avatar from '../assets/avatar.png';
+import avatarlogo from '../assets/avatarlogo.jpg';
 
 import about01 from '../assets/about01.png';
 import about02 from '../assets/about02.png';
@@ -60,6 +62,8 @@ export default {
   sass,
   typescript,
   vue,
+  avatar,
+  avatarlogo,
   about01,
   about02,
   about03,

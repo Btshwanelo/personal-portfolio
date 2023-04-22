@@ -44,7 +44,9 @@
   align-items: flex-start;
   height: 100%;
 
+
   margin: 0 2rem;
+  margin-top: 10%;
 
   @media screen and (max-width: 1200px) {
     width: 100%;
@@ -78,6 +80,13 @@
       width: 100%;
       text-transform: uppercase;
       text-align: right;
+    }
+
+    h1 {
+      color: #000;
+      font-size: 0.8rem;
+      text-align: left;
+      line-height: 1.5;
     }
   }
 
@@ -171,7 +180,7 @@
 
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
 
   img {

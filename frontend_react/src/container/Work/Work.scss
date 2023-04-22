@@ -25,7 +25,7 @@
     margin: 0.5rem;
 
     &:hover {
-      background-color: var(--secondary-color);
+      background-color: #000;
       color: #fff;
     }
 
@@ -36,7 +36,7 @@
   }
 
   .item-active {
-    background-color: var(--secondary-color);
+    background-color: #000;
     color: #fff;
   }
 }
@@ -144,11 +144,34 @@
     }
   }
 
+  p {
+    font-size: 1rem;
+    text-align: center;
+    color: #000;
+    line-height: 1.5;
+
+    @media screen and (min-width: 2000px) {
+      font-size: 1.75rem;
+    }
+
+  }
+
   .app__work-tag {
     position: absolute;
 
     padding: 0.5rem 1rem;
-    background-color: #fff;
+    background-color: #000;
     top: -25px;
+
+    p {
+      color: #fff;
+      font-size: 0.8rem;
+      text-align: center;
+      line-height: 1.5;
+
+      @media screen and (min-width: 2000px) {
+        font-size: 1.75rem;
+      }
+    }
   }
 }
